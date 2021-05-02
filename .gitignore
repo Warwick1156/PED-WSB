@@ -1,2 +1,12 @@
 bin/.ipynb_checkpoints/*
 data/temp/*
+bin/src/__pycache__/*
+data/img/*
+
+bin/Checkpoint*1.ipynb
+bin/Checkpoint*1B.ipynb
+bin/Checkpoint*2.ipynb
+bin/Checkpoint*2B.ipynb
+bin/Checkpoint*3.ipynb
+bin/Checkpoint*3B.ipynb
+bin/Concat.ipynb

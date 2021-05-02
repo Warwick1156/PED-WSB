@@ -1,0 +1,10 @@
+{
+	"path": [
+		{
+			"data": ["..", "..", "data"],
+			"dataset": ["..", "..", "data", "datasets"],
+			"image": ["..", "..", "data", "img"],
+			"temp": ["..", "..", "data", "temp"]
+		}
+	]
+}
