@@ -4,7 +4,11 @@
 			"data": ["..", "..", "data"],
 			"dataset": ["..", "..", "data", "datasets"],
 			"image": ["..", "..", "data", "img"],
-			"temp": ["..", "..", "data", "temp"]
+			"temp": ["..", "..", "data", "temp"],
+			"embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
+			"stem_embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
+			"vectorizer": ["..", "..", "data", "vectorizer.pkl"],
+			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"]
 		}
 	],
 	
@@ -61,5 +65,10 @@
 				"body_stem_tokens"
 			]
 		}
+	],
+	
+	"embbeding": [
+		{"name": "embbeding","dim": 300},
+		{"name": "stem_embbeding","dim": 300}
 	]
 }
