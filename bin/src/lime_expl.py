@@ -5,12 +5,13 @@ from lime import submodular_pick
 # https://lime-ml.readthedocs.io/en/latest/lime.html
 
 class LIME:
-    def __init__(self, X, predict_fn, num_features=5, features_names=None, result_label='score'):
+    def __init__(self, X, predict_fn, num_features=5, features_names=None, result_label='score', categorical_features=None):
 
         self.explainer = LimeTabularExplainer(X, 
             feature_names=features_names,
             class_names=[result_label],
-            mode='regression')
+            mode='regression',
+            categorical_features=categorical_features)
 
         self.predict_fn = predict_fn
         self.num_features = num_features
