@@ -6,13 +6,13 @@ from os import path
 from glob import glob
 
 
-def _load_json() -> dict:
+def load_json() -> dict:
 	with open(os.path.join('..', 'src', 'settings.json')) as f:
 		return json.load(f)
 
 
 def path(target: str) -> str:
-	settings = _load_json()
+	settings = load_json()
 		
 	paths_dict = settings['path'][0]	
 	raw_path = paths_dict[target]

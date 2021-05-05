@@ -6,5 +6,60 @@
 			"image": ["..", "..", "data", "img"],
 			"temp": ["..", "..", "data", "temp"]
 		}
+	],
+	
+	"column": [
+		{
+			"target": "score",
+			"text": [
+				"title_tokens",
+				"body_tokens",
+				"title_stem_tokens",
+				"body_stem_tokens",
+				"body_emojis",
+				"title_emojis"
+			],
+			"numerical": [
+				"is_oc",
+				"is_self",
+				"sin_time",
+				"cos_time",
+				"sin_date",
+				"cos_date",
+				"words_in_titles",
+				"words_in_body",
+				"title_capital_letters_count",
+				"title_capital_letters_ratio",
+				"body_capital_letters_count",
+				"body_capital_letters_ratio",
+				"body_urls_count",
+				"title_emoji_count",
+				"title_emojis_ratio",
+				"body_emoji_count",
+				"body_emojis_ratio",
+				"title_sentiment",
+				"body_sentiment"			
+			]
+		}
+	],
+	
+	"preprocess": [
+		{
+			"minmax": [
+				"words_in_titles",
+				"words_in_body",
+				"title_capital_letters_count",
+				"body_capital_letters_count",
+				"body_urls_count",
+				"title_emoji_count",
+				"body_emoji_count"
+			],
+			"token": [
+				"title_tokens",
+				"body_tokens",
+				"title_stem_tokens",
+				"body_stem_tokens"
+			]
+		}
 	]
 }
