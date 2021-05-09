@@ -21,7 +21,8 @@
 				"title_stem_tokens",
 				"body_stem_tokens",
 				"body_emojis",
-				"title_emojis"
+				"title_emojis",
+                "image_label"
 			],
 			"numerical": [
 				"is_oc",
@@ -30,8 +31,8 @@
 				"cos_time",
 				"sin_date",
 				"cos_date",
-				"words_in_titles",
-				"words_in_body",
+				"words_in_title_count",
+				"words_in_body_count",
 				"title_capital_letters_count",
 				"title_capital_letters_ratio",
 				"body_capital_letters_count",
@@ -42,7 +43,10 @@
 				"body_emoji_count",
 				"body_emojis_ratio",
 				"title_sentiment",
-				"body_sentiment"			
+				"body_sentiment",
+                "image_hue",
+                "image_sat",
+                "image_val"
 			]
 		}
 	],
@@ -50,8 +54,8 @@
 	"preprocess": [
 		{
 			"minmax": [
-				"words_in_titles",
-				"words_in_body",
+				"words_in_title_count",
+				"words_in_body_count",
 				"title_capital_letters_count",
 				"body_capital_letters_count",
 				"body_urls_count",
