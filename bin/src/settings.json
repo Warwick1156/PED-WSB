@@ -6,7 +6,7 @@
 			"image": ["..", "..", "data", "img"],
 			"temp": ["..", "..", "data", "temp"],
 			"embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
-			"stem_embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
+			"stem_embbeding": ["..", "..", "data",  "wsb_stem_embedding_300d.txt"],
 			"vectorizer": ["..", "..", "data", "vectorizer.pkl"],
 			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"]
 		}
@@ -18,11 +18,10 @@
 			"text": [
 				"title_tokens",
 				"body_tokens",
-				"title_stem_tokens",
-				"body_stem_tokens",
 				"body_emojis",
 				"title_emojis",
-                "image_label"
+        "image_label",
+				"ocr_text"
 			],
 			"numerical": [
 				"is_oc",
@@ -65,9 +64,19 @@
 			"token": [
 				"title_tokens",
 				"body_tokens",
-				"title_stem_tokens",
-				"body_stem_tokens"
-			]
+				"body_emojis",
+				"title_emojis",
+				"ocr_text"
+			],
+			"quantile": [
+				{
+					"quantile": 0.98,
+					"columns": [
+						"words_in_body",
+						"title_capital_letters_count",
+						"body_capital_letters_count"
+					]
+				}]
 		}
 	],
 	
