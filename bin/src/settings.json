@@ -19,7 +19,8 @@
 				"title_tokens",
 				"body_tokens",
 				"body_emojis",
-				"title_emojis"
+				"title_emojis",
+				"ocr_text"
 			],
 			"numerical": [
 				"is_oc",
@@ -60,8 +61,18 @@
 				"title_tokens",
 				"body_tokens",
 				"body_emojis",
-				"title_emojis"
-			]
+				"title_emojis",
+				"ocr_text"
+			],
+			"quantile": [
+				{
+					"quantile": 0.98,
+					"columns": [
+						"words_in_body",
+						"title_capital_letters_count",
+						"body_capital_letters_count"
+					]
+				}]
 		}
 	],
 	
