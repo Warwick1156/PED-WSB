@@ -6,7 +6,7 @@
 			"image": ["..", "..", "data", "img"],
 			"temp": ["..", "..", "data", "temp"],
 			"embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
-			"stem_embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
+			"stem_embbeding": ["..", "..", "data",  "wsb_stem_embedding_300d.txt"],
 			"vectorizer": ["..", "..", "data", "vectorizer.pkl"],
 			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"]
 		}
@@ -18,8 +18,6 @@
 			"text": [
 				"title_tokens",
 				"body_tokens",
-				"title_stem_tokens",
-				"body_stem_tokens",
 				"body_emojis",
 				"title_emojis"
 			],
@@ -61,8 +59,8 @@
 			"token": [
 				"title_tokens",
 				"body_tokens",
-				"title_stem_tokens",
-				"body_stem_tokens"
+				"body_emojis",
+				"title_emojis"
 			]
 		}
 	],

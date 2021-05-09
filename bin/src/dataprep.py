@@ -21,6 +21,7 @@ def preprocess(train: pd.DataFrame, test: pd.DataFrame) -> pd.DataFrame:
     
     train, test = _minmax(train, test, settings)
     train, test = _process_tokens(train, test, settings)
+#    train, test = _join_tokens()
     
     return train, test
         
@@ -49,7 +50,8 @@ def _clear_tokens(df, settings):
         values = [ast.literal_eval(row) for row in df[column]]
         values = _remove_empty(values)
         values = _remove_nan(values)
-        values = _remove_single_character(values)
+ #       values = _remove_single_character(values)
+        values = _to_string(values)
         
         df[column] = values
         
@@ -66,3 +68,7 @@ def _remove_nan(data):
 
 def _remove_single_character(data):
     return [[word for word in row if len(word) > 1 ] for row in data]
+    
+    
+def _to_string(data):
+    return [' '.join(row) for row in data]

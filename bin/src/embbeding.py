@@ -18,7 +18,7 @@ def _get_word_index(vocabulary, verbose=True):
     voc = vocabulary
     
     if verbose:
-        print('Smaple of vocabulary:', voc[:5], '...')
+        print('Smaple of vocabulary:', voc[2:7], '...')
 
     return dict(zip(voc, range(len(voc))))
     
@@ -78,13 +78,6 @@ def get_embbeding_layer(target_embbeding: str, vocabulary, verbose=True):
     
     embbeding_matrix = _get_matrix(num_tokens, embedding_dim, word_index, embeddings_index, verbose)
     
-    return Embedding(num_tokens, embedding_dim, embeddings_initializer=initializers.Constant(embbeding_matrix), trainable=False,)
+    return Embedding(num_tokens, embedding_dim, embeddings_initializer=initializers.Constant(embbeding_matrix), trainable=False,), embbeding_matrix
     
-
-def get_vectorizer(data, max_tokens=20000, output_sequence_length=300, output_mode='int'):
-    vectorizer = TextVectorization(max_tokens=max_tokens, output_sequence_length=output_sequence_length, output_mode=output_mode)
-    text_ds = Dataset.from_tensor_slices(data).batch(128)
-    vectorizer.adapt(text_ds)
-    
-    return vectorizer
     
