@@ -5,15 +5,19 @@
 			"dataset": ["..", "..", "data", "datasets"],
 			"image": ["..", "..", "data", "img"],
 			"temp": ["..", "..", "data", "temp"],
+			"checkpoint": ["..", "..", "data", "model", "checkpoint"],
 			"embbeding": ["..", "..", "data",  "wsb_embedding_300d.txt"],
 			"stem_embbeding": ["..", "..", "data",  "wsb_stem_embedding_300d.txt"],
 			"vectorizer": ["..", "..", "data", "vectorizer.pkl"],
-			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"]
+			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"],
+			"key": ["..", "..", "data", "key.json"],
+			"comments": ["..", "..", "data", "reddit", "comments"]
 		}
 	],
 	
 	"column": [
 		{
+			"name": "full",
 			"target": "score",
 			"text": [
 				"title_tokens",
@@ -29,8 +33,8 @@
 				"cos_time",
 				"sin_date",
 				"cos_date",
-				"words_in_titles",
-				"words_in_body",
+				"words_in_title_count",
+				"words_in_body_count",
 				"title_capital_letters_count",
 				"title_capital_letters_ratio",
 				"body_capital_letters_count",
@@ -41,25 +45,71 @@
 				"body_emoji_count",
 				"body_emojis_ratio",
 				"title_sentiment",
-				"body_sentiment"			
+				"body_sentiment",
+				"gme_price",
+				"gme_volume",
+				"body_urls_count",
+				"image_hue",
+				"image_sat",
+				"image_val",
+				"ocr_text_word_count"
+			]
+		},
+		{
+			"name": "relevant",
+			"target": "score",
+			"text": [
+				"title_stem_tokens",
+				"body_stem_tokens",
+				"body_emojis",
+				"title_emojis",
+				"ocr_text",
+				"image_label"
+			],
+			"numerical": [
+				"is_oc",
+				"is_self",
+				"sin_time",
+				"cos_time",
+				"sin_date",
+				"cos_date",
+				"words_in_title_count",
+				"title_capital_letters_count",
+				"body_urls_count",
+				"title_emoji_count",
+				"body_emoji_count",
+				"images_count",
+				"title_sentiment",
+				"body_sentiment",
+				"image_hue",
+				"image_sat",
+				"image_val",
+				"gme_price",
+				"gme_volume",
+				"ocr_text_word_count"
 			]
 		}
 	],
 	
 	"preprocess": [
 		{
+			"name": "full",
 			"minmax": [
-				"words_in_titles",
-				"words_in_body",
+				"words_in_title_count",
+				"words_in_body_count",
 				"title_capital_letters_count",
 				"body_capital_letters_count",
 				"body_urls_count",
 				"title_emoji_count",
-				"body_emoji_count"
+				"body_emoji_count",
+				"gme_price",
+				"gme_volume",
+				"body_urls_count",
+				"ocr_text_word_count"
 			],
 			"token": [
-				"title_tokens",
-				"body_tokens",
+				"title_stem_tokens",
+				"body_stem_tokens",
 				"body_emojis",
 				"title_emojis",
 				"ocr_text"
@@ -68,9 +118,40 @@
 				{
 					"quantile": 0.98,
 					"columns": [
-						"words_in_body",
+						"words_in_body_count",
 						"title_capital_letters_count",
-						"body_capital_letters_count"
+						"body_capital_letters_count",
+						"body_urls_count",
+						"ocr_text_word_count"
+					]
+				}]
+		},
+		{
+			"name": "relevant",
+			"minmax": [
+				"words_in_title_count",
+				"title_capital_letters_count",
+				"body_urls_count",
+				"title_emoji_count",
+				"body_emoji_count",
+				"gme_price",
+				"gme_volume",
+				"body_urls_count",
+				"ocr_text_word_count"
+			],
+			"token": [
+				"title_stem_tokens",
+				"body_stem_tokens",
+				"body_emojis",
+				"title_emojis",
+				"ocr_text"
+			],
+			"quantile": [
+				{
+					"quantile": 0.98,
+					"columns": [
+						"title_capital_letters_count",
+						"ocr_text_word_count"
 					]
 				}]
 		}
