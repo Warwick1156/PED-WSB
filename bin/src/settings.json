@@ -52,8 +52,8 @@
 				"gme_volume",
 				"image_hue",
 				"image_sat",
-				"ocr_text_word_count"
-				"image_val",
+				"ocr_text_word_count",
+				"image_val"
 			]
 		},
 		{

@@ -12,6 +12,7 @@ class RedditClient:
     def __init__(self):
         self.kh = KeyHandler()
         self._login()
+        self.save_path = path("comments")
 
     def _login(self):
         authorization = requests.auth.HTTPBasicAuth(
@@ -39,6 +40,6 @@ class RedditClient:
         link = 'https://oauth.reddit.com/r/wallstreetbets/comments/'
         res = requests.get(link + post_id, headers=self.kh.headers)
 
-        with open(osp.join(path("comments"), post_id + '.json'), 'w') as outfile:
+        with open(osp.join(self.save_path, post_id + '.json'), 'w') as outfile:
             json.dump(res.json(), outfile, indent=4)
 
