@@ -11,7 +11,8 @@
 			"vectorizer": ["..", "..", "data", "vectorizer.pkl"],
 			"stem_vectorizer": ["..", "..", "data", "stem_vectorizer.pkl"],
 			"key": ["..", "..", "data", "key.json"],
-			"comments": ["..", "..", "data", "reddit", "comments"]
+			"comments": ["..", "..", "data", "reddit", "comments"],
+			"model": ["..", "..", "data", "model"]
 		}
 	],
 	
