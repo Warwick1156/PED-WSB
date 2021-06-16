@@ -13,3 +13,6 @@ bin/Checkpoint*3B.ipynb
 bin/Concat.ipynb
 
 bin/notebooks/.ipynb_checkpoints/*
+
+data/datasets/*
+data/key.json
